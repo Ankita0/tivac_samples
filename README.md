@@ -1,5 +1,5 @@
 # Tiva C Samples
-TI Tiva C Sample Code for McGill Robotics
+TI Tiva C Sample Code for McGill Robotics. In the format of CCS projects.
 
 ## Minimal working examples for:
 - GPIO
