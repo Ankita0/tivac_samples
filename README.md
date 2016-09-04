@@ -15,4 +15,6 @@ Tested on the TM4C123G LaunchPad Evaluation Kit.
 - I2C
 - SPI
 - USB
+- Interrupts
+- Timers
 - UART
