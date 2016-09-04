@@ -7,9 +7,9 @@ Tested on the TM4C123G LaunchPad Evaluation Kit.
 ## Minimal working examples for:
 - GPIO output
 - PWM
+- GPIO input
 
 ## To do:
-- GPIO input
 - ADC
 - QEI
 - I2C
