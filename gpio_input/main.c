@@ -1,6 +1,9 @@
 /* HOW TO USE THIS CODE
  * Push SW1 and the green LED should light up until you release it.
  * Repeat until you get bored.
+ *
+ * A similar project is available here:
+ * http://richarthurs.com/2015/05/25/ti-arm-launchpad-gpio-input-tutorial/
  */
 
 /*******************************************************************************
