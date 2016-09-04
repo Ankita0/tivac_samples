@@ -5,12 +5,14 @@ A collection of Code Composer Studio (CCS) projects to demonstrate some of the `
 Tested on the TM4C123G LaunchPad Evaluation Kit.
 
 ## Minimal working examples for:
-- GPIO
+- GPIO output
 
 ## To do:
 - PWM
+- GPIO input
 - ADC
 - QEI
 - I2C
 - SPI
+- USB
 - UART
