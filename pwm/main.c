@@ -33,7 +33,7 @@
 #include "driverlib/pin_map.h"
 
 /* PWM driver header
- * e.g., TODO
+ * e.g., SysCtlPWMClockSet
  */
 #include "driverlib/pwm.h"
 
@@ -42,6 +42,11 @@
  ******************************************************************************/
 
 void main(void) {
+
+	// Set system clock to 80MHz using a PLL (200MHz / 2.5 = 80MHz)
+	SysCtlClockSet(SYSCTL_SYSDIV_2_5 | SYSCTL_USE_PLL | SYSCTL_OSC_MAIN |
+	                       SYSCTL_XTAL_16MHZ);
+
 	/* Before you begin:
 	 * We want a PWM output to appear on PF3 (the green LED on the LaunchPad).
 	 * If you go to page 1233 in the MCU's data sheet, you'll see that the PWM
@@ -95,7 +100,14 @@ void main(void) {
     PWMGenPeriodSet(PWM1_BASE, PWM_GEN_3, 40000);
 
     /* Set the PWM duty cycle to 25%. The duty cycle is a function of the period.
-     * You can get the period set above using PWMGenPeriodGet. In this case
+     * You can get the period set above using PWMGenPeriodGet.
+     *
+     * Warning! The PWM generator often freaks out when you set 100% duty cycle.
+     * It's a known issue in the silicon:
+     * https://e2e.ti.com/support/microcontrollers/tiva_arm/f/908/t/448664
+     * To avoid this, cap the PWM output at (MaxDuty - 1). I personally wouldn't
+     * trust it at 0% either. If you strictly need 0% and 100%, you should
+     * switch the pin back to a GPIO. Though this may take some time (~5us).
      */
     PWMPulseWidthSet(PWM1_BASE, PWM_OUT_7,
                          PWMGenPeriodGet(PWM1_BASE, PWM_GEN_3) / 4);
