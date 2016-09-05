@@ -8,13 +8,13 @@ Tested on the TM4C123G LaunchPad Evaluation Kit.
 - GPIO output
 - PWM
 - GPIO input
+- ADC
 
 ## To do:
-- ADC
+- Timers
+- Interrupts
 - QEI
 - I2C
 - SPI
 - USB
-- Interrupts
-- Timers
 - UART
