@@ -32,6 +32,11 @@
  ******************************************************************************/
 
 void main(void) {
+
+	// Set system clock to 80MHz using a PLL (200MHz / 2.5 = 80MHz)
+	SysCtlClockSet(SYSCTL_SYSDIV_2_5 | SYSCTL_USE_PLL | SYSCTL_OSC_MAIN |
+	                       SYSCTL_XTAL_16MHZ);
+
     // Enable GPIO port F
     SysCtlPeripheralEnable(SYSCTL_PERIPH_GPIOF);
 
